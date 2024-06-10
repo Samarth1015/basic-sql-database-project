@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Details</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Loop through users_info array and create a row for each user -->
+        <% for (user of users_info){ %>
+        <tr>
+          <td><%= user.userid %></td>
+          <td><%= user.username %></td>
+          <td><%= user.email %></td>
+          <td><%= user.password %></td>
+          <td>
+            <form
+              method="get"
+              action="http://localhost:8080/user/<%= user.userid%>/edit"
+            >
+              <button>edit username</button>
+            </form>
+          </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </body>
+</html>
