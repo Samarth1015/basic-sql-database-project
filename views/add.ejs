@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add new user</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="http://localhost:8080/user" method="post">
+      <table>
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Password</th>
+        </tr>
+        <tr></tr>
+        <tr>
+          <td>
+            <input type="text" placeholder="write you userid" name="userid" />
+          </td>
+          <td>
+            <input
+              type="text"
+              placeholder="write you username"
+              name="username"
+            />
+          </td>
+          <td>
+            <input type="text" placeholder="write you email" name="email" />
+          </td>
+          <td>
+            <input
+              type="password"
+              placeholder="write you password"
+              name="password"
+            />
+          </td>
+        </tr>
+      </table>
+      <button>submit</button>
+    </form>
+  </body>
+</html>

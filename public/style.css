@@ -3,3 +3,13 @@ td,
 th {
   border: 2px solid black;
 }
+div {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+  color: wheat;
+  background-color: black;
+  font-size: bold;
+  border-radius: 50rem;
+}

@@ -126,3 +126,33 @@ app.patch("/user/:id", (req, res) => {
     res.send("failed");
   }
 });
+app.get("/user/new", (req, res) => {
+  res.render("add.ejs");
+});
+app.post("/user", (req, res) => {
+  let { userid, username, email, password } = req.body;
+
+  let q = `insert into user values ('${userid}','${username}','${email}','${password}')  `;
+  try {
+    connection.query(q, (err, resul) => {
+      if (err) throw err;
+      console.log(resul);
+      res.redirect("/user");
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+app.delete("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let q = `DELETE FROM user WHERE userid='${id}'`;
+  try {
+    connection.query(q, (err, resul) => {
+      if (err) throw err;
+      res.redirect("/user");
+    });
+  } catch (err) {
+    console.log(err);
+  }
+});
